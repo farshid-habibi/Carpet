@@ -1,0 +1,38 @@
+How to use pre-recorded Persian audio files with this application:
+===================================================================
+
+This application plays pre-recorded human speech files in Persian for numbers and basic words. This is faster and much more fluent than robot-like on-device TTS.
+
+Please drop your `.mp3` files into this directory (`/app/src/main/assets/audio/fa/`):
+
+1. Digits & Numbers:
+-------------------
+Drop files for individual numbers named:
+- `1.mp3` to `19.mp3`
+- Tens: `20.mp3`, `30.mp3`, `40.mp3`, `50.mp3`, `60.mp3`, `70.mp3`, `80.mp3`, `90.mp3`
+- Hundreds: `100.mp3`, `200.mp3`, `300.mp3`, `400.mp3`, `500.mp3`, `600.mp3`, `700.mp3`, `800.mp3`, `900.mp3`
+
+2. Conjunctions & Connectors:
+----------------------------
+- `va.mp3`  - used as the connector word "and" / "o" (e.g. for "بست و سه", it plays: 20.mp3 + va.mp3 + 3.mp3)
+- `ta.mp3`  - used for ranges like "10 تا 15"
+
+3. Standard Navigation Words:
+----------------------------
+- `rang.mp3`       - Color (رنگ)
+- `gereh.mp3`      - Knot (گره)
+- `code.mp3`       - Color code (کد)
+- `bakhsh.mp3`     - Section (بخش)
+- `chap.mp3`       - Left (سمت چپ)
+- `rast.mp3`       - Right (سمت راست)
+- `paeen.mp3`      - Bottom (پایین)
+- `sotoon.mp3`     - Column (ستون)
+- `radif.mp3`      - Row (ردیف)
+- `badi.mp3`       - Next (بعدی)
+- `payan.mp3`      - End (پایان)
+- `naqshe.mp3`     - Map (نقشه)
+- `taghyir.mp3`    - Changing (تغییر)
+- `be.mp3`         - To / into (به)
+- `adad.mp3`       - Number (عدد)
+
+The player will play these files sequentially when reading the map. If an audio file is missing, the player will skip it gracefully.

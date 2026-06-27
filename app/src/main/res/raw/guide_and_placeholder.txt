@@ -1,0 +1,29 @@
+This directory is for your Persian voice files.
+Please place your .mp3/wav files here and rename them as follows:
+
+- Single digits: `n0.mp3` to `n9.mp3`
+- 10 to 19: `n10.mp3` to `n19.mp3`
+- Tens: `n20.mp3`, `n30.mp3` ... `n90.mp3`
+- Teens and tens with connector (_): `n20_join.mp3`, `n30_join.mp3` ... `n90_join.mp3`
+- Hundreds: `n100.mp3`, `n200.mp3` ... `n900.mp3`
+- Hundreds with connector (_): `n100_join.mp3`, `n200_join.mp3` ... `n900_join.mp3`
+- Thousand: `hezar.mp3`
+
+Other Persian word helper files (optional):
+- `va.mp3` (the connector "و")
+- `ta.mp3` ("تا")
+- `rang.mp3` ("رنگ")
+- `gereh.mp3` ("گره")
+- `code.mp3` ("کد")
+- `bakhsh.mp3` ("بخش")
+- `chap.mp3` ("چپ")
+- `rast.mp3` ("راست")
+- `paeen.mp3` ("پایین")
+- `radif.mp3` ("ردیف")
+- `sotoon.mp3` ("ستون")
+- `badi.mp3` ("بعدی")
+- `payan.mp3` ("پایان")
+- `naqshe.mp3` ("نقشه")
+- `taghyir.mp3` ("تغییر")
+- `be.mp3` ("به")
+- `adad.mp3` ("عدد")

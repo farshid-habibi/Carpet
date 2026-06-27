@@ -1,0 +1,73 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Carpet/Rug background shape -->
+    <path
+        android:fillColor="#9E2A2B"
+        android:pathData="M24,28h60v52h-60z" />
+    <!-- Inner carpet border -->
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M30,34h48v40h-48z" />
+    <!-- Carpet inner field -->
+    <path
+        android:fillColor="#D35400"
+        android:pathData="M34,38h40v32h-40z" />
+    <!-- Diamond pattern center -->
+    <path
+        android:fillColor="#FFD185"
+        android:pathData="M54,42l8,10l-8,10l-8,-10z" />
+    <!-- Small diamonds -->
+    <path
+        android:fillColor="#FFF3E3"
+        android:pathData="M42,48l4,5l-4,5l-4,-5z" />
+    <path
+        android:fillColor="#FFF3E3"
+        android:pathData="M66,48l4,5l-4,5l-4,-5z" />
+    <!-- Fringe at top -->
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M28,23l-2,5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M36,23l-2,5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M44,23l-2,5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M52,23l-2,5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M60,23l-2,5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M68,23l-2,5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M76,23l-2,5h4z" />
+    <!-- Fringe at bottom -->
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M28,80l-2,-5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M36,80l-2,-5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M44,80l-2,-5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M52,80l-2,-5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M60,80l-2,-5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M68,80l-2,-5h4z" />
+    <path
+        android:fillColor="#E09F3E"
+        android:pathData="M76,80l-2,-5h4z" />
+</vector>

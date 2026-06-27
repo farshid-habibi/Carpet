@@ -1,0 +1,6 @@
+{
+  "name": "نقشه خوان فرش",
+  "description": "اپلیکیشن هوشمند نقشه خوان صوتی و خانه به خانه فرش برای کمک به هنرمندان فرشباف ایرانی با استفاده از پردازش تصویر هوشمند و موتور صوتی فارسی.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
