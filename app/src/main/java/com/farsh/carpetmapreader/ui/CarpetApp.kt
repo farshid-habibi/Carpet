@@ -49,6 +49,7 @@ import androidx.compose.ui.window.Dialog
 import com.farsh.carpetmapreader.R
 import com.farsh.carpetmapreader.data.MapCell
 import com.farsh.carpetmapreader.data.MapProject
+import com.farsh.carpetmapreader.MyketUtils
 import com.farsh.carpetmapreader.processor.CarpetReaderEngine
 import kotlinx.coroutines.launch
 
@@ -108,6 +109,7 @@ fun DashboardScreen(
     var showCreateDialog by remember { mutableStateOf(false) }
     var showStatusDialog by remember { mutableStateOf(false) }
     var showAboutDialog by remember { mutableStateOf(false) }
+    var showSettingsDialog by remember { mutableStateOf(false) }
     var selectedImgBitmap by remember { mutableStateOf<Bitmap?>(null) }
 
     // Image Pickers launchers
@@ -149,10 +151,10 @@ fun DashboardScreen(
                     containerColor = MaterialTheme.colorScheme.background
                 ),
                 actions = {
-                    IconButton(onClick = { showAboutDialog = true }) {
+                    IconButton(onClick = { showSettingsDialog = true }) {
                         Icon(
-                            Icons.Default.Info,
-                            contentDescription = "درباره برنامه",
+                            Icons.Default.Settings,
+                            contentDescription = "تنظیمات",
                             tint = MaterialTheme.colorScheme.primary
                         )
                     }
@@ -353,6 +355,17 @@ fun DashboardScreen(
         }
     }
 
+    // Settings dialog
+    if (showSettingsDialog) {
+        SettingsDialog(
+            onDismiss = { showSettingsDialog = false },
+            onOpenAbout = {
+                showSettingsDialog = false
+                showAboutDialog = true
+            }
+        )
+    }
+
     // About dialog showing developer info
     if (showAboutDialog) {
         AboutDialog(onDismiss = { showAboutDialog = false })
@@ -415,7 +428,7 @@ fun AboutDialog(onDismiss: () -> Unit) {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    "نسخه ۱.۰",
+                    "نسخه ۱.۰.۰",
                     fontSize = 12.sp,
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
                 )
@@ -483,6 +496,110 @@ fun AboutDialog(onDismiss: () -> Unit) {
                     Text("باشه", fontWeight = FontWeight.Bold)
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun SettingsDialog(
+    onDismiss: () -> Unit,
+    onOpenAbout: () -> Unit
+) {
+    val context = LocalContext.current
+    Dialog(onDismissRequest = onDismiss) {
+        Card(
+            shape = RoundedCornerShape(20.dp),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Column(
+                modifier = Modifier.padding(24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    "تنظیمات",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
+                Spacer(modifier = Modifier.height(8.dp))
+
+                SettingsItem(
+                    icon = Icons.Default.Info,
+                    text = "درباره برنامه",
+                    onClick = onOpenAbout
+                )
+                SettingsItem(
+                    icon = Icons.Default.Star,
+                    text = "امتیاز به برنامه در مایکت",
+                    onClick = { MyketUtils.openAppPage(context) }
+                )
+                SettingsItem(
+                    icon = Icons.Default.Apps,
+                    text = "سایر برنامه‌های توسعه‌دهنده",
+                    onClick = { MyketUtils.openMoreApps(context) }
+                )
+                SettingsItem(
+                    icon = Icons.Default.Email,
+                    text = "ارسال بازخورد (ایمیل)",
+                    onClick = { MyketUtils.sendEmail(context) }
+                )
+                SettingsItem(
+                    icon = Icons.Default.Phone,
+                    text = "تماس با توسعه‌دهنده",
+                    onClick = { MyketUtils.dialPhone(context) }
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    "نسخه ۱.۰.۰",
+                    fontSize = 12.sp,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f)
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+                Button(
+                    onClick = onDismiss,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Text("بستن", fontWeight = FontWeight.Bold)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun SettingsItem(
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    text: String,
+    onClick: () -> Unit
+) {
+    TextButton(
+        onClick = onClick,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Icon(
+                icon,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.size(20.dp)
+            )
+            Text(
+                text,
+                fontSize = 14.sp,
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.weight(1f),
+                textAlign = TextAlign.Start
+            )
         }
     }
 }
